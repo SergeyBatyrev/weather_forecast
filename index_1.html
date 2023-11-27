@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h3 {
+      display: inline-block;
+      color: #309fa7;
+      margin: 0;
+    }
+    form {
+      display: inline-block;
+    }
+
+    section {
+      width: 850px;
+      margin: 0 auto;
+      background-color: rgb(236, 236, 236);
+      padding: 10px 20px;
+      margin-top: 50px;
+      border: 1px black solid;
+      box-shadow: 4px 4px 7px 0px #8a8989;
+    }
+    input[type="text"] {
+      height: 35px;
+      border: 0;
+      border-bottom: 1px black solid;
+      background-color: rgb(236, 236, 236);
+      font-size: 18px;
+    }
+    input[type="text"]:focus {
+      outline: none;
+    }
+    input[type="submit"] {
+      border: 0;
+      background-image: url(./glass.png);
+      background-size: 30px auto;
+      background-repeat: no-repeat;
+      width: 35px;
+      height: 33px;
+      background-color: rgb(236, 236, 236);
+      cursor: pointer;
+    }
+    .indications {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #fcfcfc;
+    }
+    .indications {
+      padding: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 20px;
+    }
+    .indications-header {
+      display: flex;
+      justify-content: space-between;
+      color: #309fa7;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .cont {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      align-items: center;
+    }
+    .temp {
+      font-size: 35px;
+    }
+    .tempItem {
+      margin-bottom: 20px;
+      width: 200px;
+      margin-right: 35px;
+    }
+    .picture {
+      margin-left: 25px;
+      margin-top: -15px;
+    }
+    .img2 {
+      /* background-image: url(./glass.png); */
+      width: 80px;
+      height: 80px;
+      background-size: cover;
+      /* margin-left: 25px; */
+      margin-top: 18px;
+    }
+    .max,
+    .min,
+    .wind {
+      float: right;
+    }
+
+    /*  */
+
+    .indications-hours {
+      background-color: #fcfcfc;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
+    }
+    .day {
+      display: flex;
+      justify-content: space-between;
+    }
+    .day-weather {
+      margin-top: 35px;
+      width: 110px;
+    }
+
+    .m {
+      margin-bottom: 15px;
+    }
+    .pictur1 {
+      background-size: 100% auto;
+      height: 100px;
+      width: 100%;
+    }
+    .p {
+      height: 40px;
+    }
+  </style>
+  <body>
+    <section id="Weather">
+      <div class="header">
+        <h3>CURRENT WEATHER</h3>
+        <form action="" method="get" name="weather">
+          <label for="" style="vertical-align: 58%"
+            ><input type="text" name="city" placeholder="Search"
+          /></label>
+          <input type="submit" value="" />
+        </form>
+      </div>
+      <div class="indications">
+        <div class="indications-header">
+          <div class="city">Город</div>
+          <div class="date">дата:</div>
+        </div>
+        <div class="cont">
+          <div class="picture">
+            <div id="pict">Sunny</div>
+            <div class="img2" id="im"></div>
+          </div>
+          <div id="t" class="temp">18C</div>
+          <div class="tempcolections">
+            <div class="tempItem">
+              <span>Min temperature</span>
+              <span id="mini" class="min">16C</span>
+            </div>
+            <div class="tempItem">
+              <span>Max temperature</span>
+              <span id="maxi" class="max">22C</span>
+            </div>
+            <div class="tempItem">
+              <span>Wind speed (km/h)</span>
+              <span id="windd" class="wind">3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="indications-hours">
+        <div
+          style="
+            color: #309fa7;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-left: 30px;
+            padding-top: 20px;
+          "
+        >
+          Hourly
+        </div>
+        <div class="day">
+          <div class="day-weather m">
+            <div id="today" class="teday m">Sunday</div>
+            <div class="pictur1 m"></div>
+            <div class="m p">Forecast</div>
+            <div class="m">Temp(C)</div>
+            <div class="m">Wind (km/h)</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time1" class="m">7:00</div>
+            <div id="pic1" class="pictur1 m"></div>
+            <div id="w1" class="m p">Sunny</div>
+            <div id="t1" class="m">18C</div>
+            <div id="wind1" class="m">3</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time2" class="m">7:00</div>
+            <div id="pic2" class="pictur1 m"></div>
+            <div id="w2" class="m p">Sunny</div>
+            <div id="t2" class="m">18C</div>
+            <div id="wind2" class="m">3</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time3" class="m">7:00</div>
+            <div id="pic3" class="pictur1 m"></div>
+            <div id="w3" class="m p">Sunny</div>
+            <div id="t3" class="m">18C</div>
+            <div id="wind3" class="m">3</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time4" class="m">7:00</div>
+            <div id="pic4" class="pictur1 m"></div>
+            <div id="w4" class="m p">Sunny</div>
+            <div id="t4" class="m">18C</div>
+            <div id="wind4" class="m">3</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time5" class="m">7:00</div>
+            <div id="pic5" class="pictur1 m"></div>
+            <div id="w5" class="m p">Sunny</div>
+            <div id="t5" class="m">18C</div>
+            <div id="wind5" class="m">3</div>
+          </div>
+          <div class="day-weather m">
+            <div id="time6" class="m">7:00</div>
+            <div id="pic6" class="pictur1 m"></div>
+            <div id="w6" class="m p">Sunny</div>
+            <div id="t6" class="m">18C</div>
+            <div id="wind6" class="m">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      //   document.forms[0].addEventListener("submit", function (e) {
+      //     e.preventDefault();
+      let key = "b65e3044d5be201c1011fed158df46bc";
+      let form = document.forms[0];
+      // let City = form.city.value;
+      let City = "Ижевск";
+      let clock = new Date().toLocaleDateString();
+      let city = document.querySelector(".city");
+      let date = document.querySelector(".date");
+      let days = [
+        "Воскресенье",
+        "Понедельник",
+        "Вторник",
+        "Среда",
+        "Четверг",
+        "Пятница",
+        "Суббота",
+      ];
+      var d = new Date();
+      var n = d.getDay();
+
+      let query = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${key}&lang=ru&units=metric`;
+      let queryFuture = `http://api.openweathermap.org/data/2.5/forecast?q=${City}&appid=${key}&cnt=10&lang=ru&units=metric`;
+
+      (async function () {
+        let response = await fetch(query);
+        if (response.ok) {
+          let json = await response.json();
+          console.log(json);
+          city.innerHTML = `${json.name}`;
+          date.innerHTML = ` ${clock}`;
+          pict.innerHTML = `${json.weather[0].description}`;
+          im.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png)`;
+          t.innerHTML = `${Math.round(json.main.temp)}&deg C`;
+          mini.innerHTML = `${Math.round(json.main.temp_min)}`;
+          maxi.innerHTML = `${Math.round(json.main.temp_max)}`;
+          // windd.innerHTML = `${Math.round(json.wind.speed)}`;
+        } else {
+          alert(
+            `не удолось сделать запрос на ${query}. Код ошибки:${response.status}(${response.statusText})`
+          );
+        }
+      })();
+      (async function () {
+        let response2 = await fetch(queryFuture);
+        if (response2.ok) {
+          let json2 = await response2.json();
+          console.log(json2);
+          today.innerHTML = `${days[n]}`;
+          pic1.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[0].weather[0].icon}@2x.png)`;
+          pic2.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[1].weather[0].icon}@2x.png)`;
+          pic3.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[2].weather[0].icon}@2x.png)`;
+          pic4.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[3].weather[0].icon}@2x.png)`;
+          pic5.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[4].weather[0].icon}@2x.png)`;
+          pic6.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[5].weather[0].icon}@2x.png)`;
+          w1.innerHTML = `${json2.list[0].weather[0].description}`;
+          w2.innerHTML = `${json2.list[1].weather[0].description}`;
+          w3.innerHTML = `${json2.list[2].weather[0].description}`;
+          w4.innerHTML = `${json2.list[3].weather[0].description}`;
+          w5.innerHTML = `${json2.list[4].weather[0].description}`;
+          w6.innerHTML = `${json2.list[5].weather[0].description}`;
+          t1.innerHTML = `${Math.round(json2.list[0].main.temp)} &deg C`;
+          t2.innerHTML = `${Math.round(json2.list[1].main.temp)} &deg C`;
+          t3.innerHTML = `${Math.round(json2.list[2].main.temp)} &deg C`;
+          t4.innerHTML = `${Math.round(json2.list[3].main.temp)} &deg C`;
+          t5.innerHTML = `${Math.round(json2.list[4].main.temp)} &deg C`;
+          t6.innerHTML = `${Math.round(json2.list[5].main.temp)} &deg C`;
+          wind1.innerHTML = `${Math.round(json2.list[0].wind.speed)}`;
+          wind2.innerHTML = `${Math.round(json2.list[1].wind.speed)}`;
+          wind3.innerHTML = `${Math.round(json2.list[2].wind.speed)}`;
+          wind4.innerHTML = `${Math.round(json2.list[3].wind.speed)}`;
+          wind5.innerHTML = `${Math.round(json2.list[4].wind.speed)}`;
+          wind6.innerHTML = `${Math.round(json2.list[5].wind.speed)}`;
+          windd.innerHTML = `${Math.round(json2.list[0].wind.speed)}`;
+          let b = json2.list[0].dt_txt.split(" ")[1];
+          let c = b.split(":")[0];
+          b = b.substring(0, b.length - 3);
+          time1.innerHTML = `${b}`;
+          let b1 = json2.list[1].dt_txt.split(" ")[1];
+          let c1 = b1.split(":")[0];
+          b1 = b1.substring(0, b1.length - 3);
+          time2.innerHTML = `${b1}`;
+          let b2 = json2.list[2].dt_txt.split(" ")[1];
+          let c2 = b2.split(":")[0];
+          b2 = b2.substring(0, b2.length - 3);
+          time3.innerHTML = `${b2}`;
+          let b3 = json2.list[3].dt_txt.split(" ")[1];
+          let c3 = b3.split(":")[0];
+          b3 = b3.substring(0, b3.length - 3);
+          time4.innerHTML = `${b3}`;
+          let b4 = json2.list[4].dt_txt.split(" ")[1];
+          let c4 = b4.split(":")[0];
+          b4 = b4.substring(0, b4.length - 3);
+          time5.innerHTML = `${b4}`;
+          let b5 = json2.list[5].dt_txt.split(" ")[1];
+          let c5 = b5.split(":")[0];
+          b5 = b5.substring(0, b5.length - 3);
+          time6.innerHTML = `${b5}`;
+        } else {
+          alert(
+            `не удолось сделать запрос на ${queryFuture}. Код ошибки:${response2.status}(${response2.statusText})`
+          );
+        }
+      })();
+      form.city.value = null;
+      //   });
+
+      document.forms[0].addEventListener("submit", function (e) {
+        e.preventDefault();
+        let key = "b65e3044d5be201c1011fed158df46bc";
+        let form = document.forms[0];
+        let City = form.city.value;
+        // let City = "Ижевск";
+        let clock = new Date().toLocaleDateString();
+        let city = document.querySelector(".city");
+        let date = document.querySelector(".date");
+        let days = [
+          "Воскресенье",
+          "Понедельник",
+          "Вторник",
+          "Среда",
+          "Четверг",
+          "Пятница",
+          "Суббота",
+        ];
+        var d = new Date();
+        var n = d.getDay();
+
+        let query = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${key}&lang=ru&units=metric`;
+        let queryFuture = `http://api.openweathermap.org/data/2.5/forecast?q=${City}&appid=${key}&cnt=10&lang=ru&units=metric`;
+
+        (async function () {
+          let response = await fetch(query);
+          if (response.ok) {
+            let json = await response.json();
+            console.log(json);
+            city.innerHTML = `${json.name}`;
+            date.innerHTML = ` ${clock}`;
+            pict.innerHTML = `${json.weather[0].description}`;
+            im.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png)`;
+            t.innerHTML = `${Math.round(json.main.temp)}&deg C`;
+            mini.innerHTML = `${Math.round(json.main.temp_min)}`;
+            maxi.innerHTML = `${Math.round(json.main.temp_max)}`;
+            // windd.innerHTML = `${Math.round(json.wind.speed)}`;
+          } else {
+            alert(
+              `не удолось сделать запрос на ${query}. Код ошибки:${response.status}(${response.statusText})`
+            );
+          }
+        })();
+        (async function () {
+          let response2 = await fetch(queryFuture);
+          if (response2.ok) {
+            let json2 = await response2.json();
+            console.log(json2);
+            today.innerHTML = `${days[n]}`;
+            pic1.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[0].weather[0].icon}@2x.png)`;
+            pic2.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[1].weather[0].icon}@2x.png)`;
+            pic3.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[2].weather[0].icon}@2x.png)`;
+            pic4.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[3].weather[0].icon}@2x.png)`;
+            pic5.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[4].weather[0].icon}@2x.png)`;
+            pic6.style.backgroundImage = `url(https://openweathermap.org/img/wn/${json2.list[5].weather[0].icon}@2x.png)`;
+            w1.innerHTML = `${json2.list[0].weather[0].description}`;
+            w2.innerHTML = `${json2.list[1].weather[0].description}`;
+            w3.innerHTML = `${json2.list[2].weather[0].description}`;
+            w4.innerHTML = `${json2.list[3].weather[0].description}`;
+            w5.innerHTML = `${json2.list[4].weather[0].description}`;
+            w6.innerHTML = `${json2.list[5].weather[0].description}`;
+            t1.innerHTML = `${Math.round(json2.list[0].main.temp)} &deg C`;
+            t2.innerHTML = `${Math.round(json2.list[1].main.temp)} &deg C`;
+            t3.innerHTML = `${Math.round(json2.list[2].main.temp)} &deg C`;
+            t4.innerHTML = `${Math.round(json2.list[3].main.temp)} &deg C`;
+            t5.innerHTML = `${Math.round(json2.list[4].main.temp)} &deg C`;
+            t6.innerHTML = `${Math.round(json2.list[5].main.temp)} &deg C`;
+            wind1.innerHTML = `${Math.round(json2.list[0].wind.speed)}`;
+            wind2.innerHTML = `${Math.round(json2.list[1].wind.speed)}`;
+            wind3.innerHTML = `${Math.round(json2.list[2].wind.speed)}`;
+            wind4.innerHTML = `${Math.round(json2.list[3].wind.speed)}`;
+            wind5.innerHTML = `${Math.round(json2.list[4].wind.speed)}`;
+            wind6.innerHTML = `${Math.round(json2.list[5].wind.speed)}`;
+            windd.innerHTML = `${Math.round(json2.list[0].wind.speed)}`;
+            let b = json2.list[0].dt_txt.split(" ")[1];
+            let c = b.split(":")[0];
+            b = b.substring(0, b.length - 3);
+            time1.innerHTML = `${b}`;
+            let b1 = json2.list[1].dt_txt.split(" ")[1];
+            let c1 = b1.split(":")[0];
+            b1 = b1.substring(0, b1.length - 3);
+            time2.innerHTML = `${b1}`;
+            let b2 = json2.list[2].dt_txt.split(" ")[1];
+            let c2 = b2.split(":")[0];
+            b2 = b2.substring(0, b2.length - 3);
+            time3.innerHTML = `${b2}`;
+            let b3 = json2.list[3].dt_txt.split(" ")[1];
+            let c3 = b3.split(":")[0];
+            b3 = b3.substring(0, b3.length - 3);
+            time4.innerHTML = `${b3}`;
+            let b4 = json2.list[4].dt_txt.split(" ")[1];
+            let c4 = b4.split(":")[0];
+            b4 = b4.substring(0, b4.length - 3);
+            time5.innerHTML = `${b4}`;
+            let b5 = json2.list[5].dt_txt.split(" ")[1];
+            let c5 = b5.split(":")[0];
+            b5 = b5.substring(0, b5.length - 3);
+            time6.innerHTML = `${b5}`;
+          } else {
+            alert(
+              `не удолось сделать запрос на ${queryFuture}. Код ошибки:${response2.status}(${response2.statusText})`
+            );
+          }
+        })();
+        form.city.value = null;
+      });
+    </script>
+  </body>
+</html>
